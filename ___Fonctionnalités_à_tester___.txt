@@ -1,0 +1,70 @@
+## Fonctionnalités à tester ## 
+
+Fichier postman New Collection.postman_collection.json
+
+1. Routes CRUD RESTful pour les films
+
+Créer un film (Admin uniquement)
+  -Méthode: `POST`
+  -URL: `/v1/films`
+  -Sécurisation avec un token JWT valide avec un rôle d'administrateur.
+
+Lire un film (par ID)
+  -Méthode: `GET`
+  -URL: `/v1/films/{id}`
+
+Mettre à jour un film (Admin uniquement)
+  -Méthode: `PUT`
+  -URL: `/v1/films/{id}`
+  -Sécurisation** : Requiert un token JWT valide avec un rôle d'administrateur.
+
+Supprimer un film (Admin uniquement)
+  -Méthode: `DELETE`
+  -URL: `/v1/films/{id}`
+  -Sécurisation** : Requiert un token JWT valide avec un rôle d'administrateur.
+
+Liste des films avec pagination
+  -Méthode: `GET`
+  -URL: `/v1/films`
+  -Paramètres:
+    - `page` (numéro de la page, par défaut 1)
+    - `limit` (nombre de films par page, par défaut 10)
+
+2. Routes pour les acteurs des films
+
+Lister les acteurs d'un film
+  -Méthode: `GET`
+  -URL: `/v1/films/{film_id}/actors`
+
+Obtenir un acteur d'un film par ID
+  -Méthode: `GET`
+  -URL: `/v1/films/{film_id}/actors/{actor_id}`
+
+3. Téléchargement d'images de couverture de films
+
+Ajouter une image de couverture à un film**
+  -Méthode: `POST`
+  -URL: `/v1/films/{film_id}/cover`
+
+4. Sécurisation de l'API avec JWT
+
+Inscription et Connexion 
+  -Méthode: `POST`
+  -URL: `/auth/register`
+  -URL: `/auth/login`
+
+Renouvellement du Token
+  -Méthode: `POST`
+  -URL: `/auth/refresh`
+ 
+5. RBAC - Contrôle d'accès basé sur les rôles
+  -Admin 
+  -Guest  
+
+6. GraphQL & Swagger
+  -URL : `/graphql`
+  -URL : `/docs`
+
+
+
+

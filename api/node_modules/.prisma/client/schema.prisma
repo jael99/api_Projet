@@ -1,0 +1,255 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model actor {
+  actor_id    Int          @id @default(autoincrement()) @db.UnsignedSmallInt
+  first_name  String       @db.VarChar(45)
+  last_name   String       @db.VarChar(45)
+  last_update DateTime     @default(now()) @db.Timestamp(0)
+  film_actor  film_actor[]
+
+  @@index([last_name], map: "idx_actor_last_name")
+}
+
+model address {
+  address_id  Int                     @id @default(autoincrement()) @db.UnsignedSmallInt
+  address     String                  @db.VarChar(50)
+  address2    String?                 @db.VarChar(50)
+  district    String                  @db.VarChar(20)
+  city_id     Int                     @db.UnsignedSmallInt
+  postal_code String?                 @db.VarChar(10)
+  phone       String                  @db.VarChar(20)
+  location    Unsupported("geometry")
+  last_update DateTime                @default(now()) @db.Timestamp(0)
+  city        city                    @relation(fields: [city_id], references: [city_id], map: "fk_address_city")
+  customer    customer[]
+  staff       staff[]
+  store       store[]
+
+  @@index([city_id], map: "idx_fk_city_id")
+  @@index([location(length: 32)], map: "idx_location")
+}
+
+model category {
+  category_id   Int             @id @default(autoincrement()) @db.UnsignedTinyInt
+  name          String          @db.VarChar(25)
+  last_update   DateTime        @default(now()) @db.Timestamp(0)
+  film_category film_category[]
+}
+
+model city {
+  city_id     Int       @id @default(autoincrement()) @db.UnsignedSmallInt
+  city        String    @db.VarChar(50)
+  country_id  Int       @db.UnsignedSmallInt
+  last_update DateTime  @default(now()) @db.Timestamp(0)
+  address     address[]
+  country     country   @relation(fields: [country_id], references: [country_id], map: "fk_city_country")
+
+  @@index([country_id], map: "idx_fk_country_id")
+}
+
+model country {
+  country_id  Int      @id @default(autoincrement()) @db.UnsignedSmallInt
+  country     String   @db.VarChar(50)
+  last_update DateTime @default(now()) @db.Timestamp(0)
+  city        city[]
+}
+
+model customer {
+  customer_id Int       @id @default(autoincrement()) @db.UnsignedSmallInt
+  store_id    Int       @db.UnsignedTinyInt
+  first_name  String    @db.VarChar(45)
+  last_name   String    @db.VarChar(45)
+  email       String?   @db.VarChar(50)
+  address_id  Int       @db.UnsignedSmallInt
+  active      Boolean   @default(true)
+  create_date DateTime  @db.DateTime(0)
+  last_update DateTime? @default(now()) @db.Timestamp(0)
+  address     address   @relation(fields: [address_id], references: [address_id], map: "fk_customer_address")
+  store       store     @relation(fields: [store_id], references: [store_id], map: "fk_customer_store")
+  payment     payment[]
+  rental      rental[]
+
+  @@index([address_id], map: "idx_fk_address_id")
+  @@index([store_id], map: "idx_fk_store_id")
+  @@index([last_name], map: "idx_last_name")
+}
+
+model film {
+  film_id                                      Int             @id @default(autoincrement()) @db.UnsignedSmallInt
+  title                                        String          @db.VarChar(128)
+  description                                  String?         @db.Text
+  release_year                                 Int?            @db.Year
+  language_id                                  Int             @db.UnsignedTinyInt
+  original_language_id                         Int?            @db.UnsignedTinyInt
+  rental_duration                              Int             @default(3) @db.UnsignedTinyInt
+  rental_rate                                  Decimal         @default(4.99) @db.Decimal(4, 2)
+  length                                       Int?            @db.UnsignedSmallInt
+  replacement_cost                             Decimal         @default(19.99) @db.Decimal(5, 2)
+  rating                                       film_rating?    @default(G)
+  special_features                             String?
+  last_update                                  DateTime        @default(now()) @db.Timestamp(0)
+  language_film_language_idTolanguage          language        @relation("film_language_idTolanguage", fields: [language_id], references: [language_id], map: "fk_film_language")
+  language_film_original_language_idTolanguage language?       @relation("film_original_language_idTolanguage", fields: [original_language_id], references: [language_id], onDelete: Restrict, map: "fk_film_language_original")
+  film_actor                                   film_actor[]
+  film_category                                film_category[]
+  inventory                                    inventory[]
+
+  @@index([language_id], map: "idx_fk_language_id")
+  @@index([original_language_id], map: "idx_fk_original_language_id")
+  @@index([title], map: "idx_title")
+}
+
+model film_actor {
+  actor_id    Int      @db.UnsignedSmallInt
+  film_id     Int      @db.UnsignedSmallInt
+  last_update DateTime @default(now()) @db.Timestamp(0)
+  actor       actor    @relation(fields: [actor_id], references: [actor_id], onDelete: Cascade, map: "fk_film_actor_actor")
+  film        film     @relation(fields: [film_id], references: [film_id], onDelete: Cascade, map: "fk_film_actor_film")
+
+  @@id([actor_id, film_id])
+  @@index([film_id], map: "idx_fk_film_id")
+}
+
+model film_category {
+  film_id     Int      @db.UnsignedSmallInt
+  category_id Int      @db.UnsignedTinyInt
+  last_update DateTime @default(now()) @db.Timestamp(0)
+  category    category @relation(fields: [category_id], references: [category_id], map: "fk_film_category_category")
+  film        film     @relation(fields: [film_id], references: [film_id], map: "fk_film_category_film")
+
+  @@id([film_id, category_id])
+  @@index([category_id], map: "fk_film_category_category")
+}
+
+model film_text {
+  film_id     Int     @id @db.SmallInt
+  title       String  @db.VarChar(255)
+  description String? @db.Text
+
+  @@fulltext([title, description], map: "idx_title_description")
+}
+
+model inventory {
+  inventory_id Int      @id @default(autoincrement()) @db.UnsignedMediumInt
+  film_id      Int      @db.UnsignedSmallInt
+  store_id     Int      @db.UnsignedTinyInt
+  last_update  DateTime @default(now()) @db.Timestamp(0)
+  film         film     @relation(fields: [film_id], references: [film_id], map: "fk_inventory_film")
+  store        store    @relation(fields: [store_id], references: [store_id], map: "fk_inventory_store")
+  rental       rental[]
+
+  @@index([film_id], map: "idx_fk_film_id")
+  @@index([store_id, film_id], map: "idx_store_id_film_id")
+}
+
+model language {
+  language_id                              Int      @id @default(autoincrement()) @db.UnsignedTinyInt
+  name                                     String   @db.Char(20)
+  last_update                              DateTime @default(now()) @db.Timestamp(0)
+  film_film_language_idTolanguage          film[]   @relation("film_language_idTolanguage")
+  film_film_original_language_idTolanguage film[]   @relation("film_original_language_idTolanguage")
+}
+
+model payment {
+  payment_id   Int       @id @default(autoincrement()) @db.UnsignedSmallInt
+  customer_id  Int       @db.UnsignedSmallInt
+  staff_id     Int       @db.UnsignedTinyInt
+  rental_id    Int?
+  amount       Decimal   @db.Decimal(5, 2)
+  payment_date DateTime  @db.DateTime(0)
+  last_update  DateTime? @default(now()) @db.Timestamp(0)
+  customer     customer  @relation(fields: [customer_id], references: [customer_id], map: "fk_payment_customer")
+  rental       rental?   @relation(fields: [rental_id], references: [rental_id], map: "fk_payment_rental")
+  staff        staff     @relation(fields: [staff_id], references: [staff_id], map: "fk_payment_staff")
+
+  @@index([rental_id], map: "fk_payment_rental")
+  @@index([customer_id], map: "idx_fk_customer_id")
+  @@index([staff_id], map: "idx_fk_staff_id")
+}
+
+model rental {
+  rental_id    Int       @id @default(autoincrement())
+  rental_date  DateTime  @db.DateTime(0)
+  inventory_id Int       @db.UnsignedMediumInt
+  customer_id  Int       @db.UnsignedSmallInt
+  return_date  DateTime? @db.DateTime(0)
+  staff_id     Int       @db.UnsignedTinyInt
+  last_update  DateTime  @default(now()) @db.Timestamp(0)
+  payment      payment[]
+  customer     customer  @relation(fields: [customer_id], references: [customer_id], map: "fk_rental_customer")
+  inventory    inventory @relation(fields: [inventory_id], references: [inventory_id], map: "fk_rental_inventory")
+  staff        staff     @relation(fields: [staff_id], references: [staff_id], map: "fk_rental_staff")
+
+  @@unique([rental_date, inventory_id, customer_id], map: "rental_date")
+  @@index([customer_id], map: "idx_fk_customer_id")
+  @@index([inventory_id], map: "idx_fk_inventory_id")
+  @@index([staff_id], map: "idx_fk_staff_id")
+}
+
+model staff {
+  staff_id                            Int       @id @default(autoincrement()) @db.UnsignedTinyInt
+  first_name                          String    @db.VarChar(45)
+  last_name                           String    @db.VarChar(45)
+  address_id                          Int       @db.UnsignedSmallInt
+  picture                             Bytes?    @db.Blob
+  email                               String?   @db.VarChar(50)
+  store_id                            Int       @db.UnsignedTinyInt
+  active                              Boolean   @default(true)
+  username                            String    @db.VarChar(16)
+  password                            String?   @db.VarChar(40)
+  last_update                         DateTime  @default(now()) @db.Timestamp(0)
+  payment                             payment[]
+  rental                              rental[]
+  address                             address   @relation(fields: [address_id], references: [address_id], map: "fk_staff_address")
+  store_staff_store_idTostore         store     @relation("staff_store_idTostore", fields: [store_id], references: [store_id], map: "fk_staff_store")
+  store_store_manager_staff_idTostaff store?    @relation("store_manager_staff_idTostaff")
+
+  @@index([address_id], map: "idx_fk_address_id")
+  @@index([store_id], map: "idx_fk_store_id")
+}
+
+model store {
+  store_id                            Int         @id @default(autoincrement()) @db.UnsignedTinyInt
+  manager_staff_id                    Int         @unique(map: "idx_unique_manager") @db.UnsignedTinyInt
+  address_id                          Int         @db.UnsignedSmallInt
+  last_update                         DateTime    @default(now()) @db.Timestamp(0)
+  customer                            customer[]
+  inventory                           inventory[]
+  staff_staff_store_idTostore         staff[]     @relation("staff_store_idTostore")
+  address                             address     @relation(fields: [address_id], references: [address_id], map: "fk_store_address")
+  staff_store_manager_staff_idTostaff staff       @relation("store_manager_staff_idTostaff", fields: [manager_staff_id], references: [staff_id], map: "fk_store_staff")
+
+  @@index([address_id], map: "idx_fk_address_id")
+}
+
+model users {
+  id            Int        @id @default(autoincrement())
+  email         String     @unique(map: "email") @db.VarChar(255)
+  password      String     @db.VarChar(255)
+  role          users_role @default(user)
+  created_at    DateTime?  @default(now()) @db.Timestamp(0)
+  updated_at    DateTime?  @default(now()) @db.Timestamp(0)
+  refresh_token String?    @db.VarChar(255)
+}
+
+enum film_rating {
+  G
+  PG
+  PG_13 @map("PG-13")
+  R
+  NC_17 @map("NC-17")
+}
+
+enum users_role {
+  admin
+  user
+  guest
+}

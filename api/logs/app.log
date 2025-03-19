@@ -1,0 +1,216 @@
+{"level":"info","message":"🚀 Server running on http://localhost:3000"}
+{"level":"info","message":"REST API: http://localhost:3000/v1/hello"}
+{"level":"info","message":"GraphQL API: http://localhost:3000/v2"}
+{"level":"info","message":"Status Check: http://localhost:3000/status"}
+{"level":"info","message":"Metrics: http://localhost:3000/metrics"}
+{"level":"warn","message":"HTTP GET /","meta":{"req":{"headers":{"accept":"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8","accept-encoding":"gzip, deflate, br, zstd","accept-language":"fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3","connection":"keep-alive","dnt":"1","host":"localhost:3000","priority":"u=0, i","sec-fetch-dest":"document","sec-fetch-mode":"navigate","sec-fetch-site":"none","sec-fetch-user":"?1","upgrade-insecure-requests":"1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:136.0) Gecko/20100101 Firefox/136.0"},"httpVersion":"1.1","method":"GET","originalUrl":"/","query":{},"url":"/"},"res":{"statusCode":404},"responseTime":2}}
+{"level":"info","message":"HTTP GET /v1/hello","meta":{"req":{"headers":{"accept":"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8","accept-encoding":"gzip, deflate, br, zstd","accept-language":"fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3","connection":"keep-alive","dnt":"1","host":"localhost:3000","priority":"u=0, i","sec-fetch-dest":"document","sec-fetch-mode":"navigate","sec-fetch-site":"none","sec-fetch-user":"?1","upgrade-insecure-requests":"1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:136.0) Gecko/20100101 Firefox/136.0"},"httpVersion":"1.1","method":"GET","originalUrl":"/v1/hello","query":{},"url":"/v1/hello"},"res":{"statusCode":200},"responseTime":1}}
+{"level":"warn","message":"HTTP GET /favicon.ico","meta":{"req":{"headers":{"accept":"image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5","accept-encoding":"gzip, deflate, br, zstd","accept-language":"fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3","connection":"keep-alive","dnt":"1","host":"localhost:3000","priority":"u=6","referer":"http://localhost:3000/v1/hello","sec-fetch-dest":"image","sec-fetch-mode":"no-cors","sec-fetch-site":"cross-site","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:136.0) Gecko/20100101 Firefox/136.0"},"httpVersion":"1.1","method":"GET","originalUrl":"/favicon.ico","query":{},"url":"/favicon.ico"},"res":{"statusCode":404},"responseTime":1}}
+{"level":"info","message":"HTTP GET /v2","meta":{"req":{"headers":{"accept":"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8","accept-encoding":"gzip, deflate, br, zstd","accept-language":"fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3","connection":"keep-alive","dnt":"1","host":"localhost:3000","priority":"u=0, i","sec-fetch-dest":"document","sec-fetch-mode":"navigate","sec-fetch-site":"none","sec-fetch-user":"?1","upgrade-insecure-requests":"1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:136.0) Gecko/20100101 Firefox/136.0"},"httpVersion":"1.1","method":"GET","originalUrl":"/v2","query":{},"url":"/v2"},"res":{"statusCode":200},"responseTime":6}}
+{"level":"info","message":"HTTP POST /v2?","meta":{"req":{"headers":{"accept":"application/json","accept-encoding":"gzip, deflate, br, zstd","accept-language":"fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3","connection":"keep-alive","content-length":"1787","content-type":"application/json","dnt":"1","host":"localhost:3000","origin":"http://localhost:3000","priority":"u=4","referer":"http://localhost:3000/","sec-fetch-dest":"empty","sec-fetch-mode":"cors","sec-fetch-site":"same-origin","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:136.0) Gecko/20100101 Firefox/136.0"},"httpVersion":"1.1","method":"POST","originalUrl":"/v2?","query":{},"url":"/v2?"},"res":{"statusCode":200},"responseTime":13}}
+{"level":"warn","message":"HTTP GET /favicon.ico","meta":{"req":{"headers":{"accept":"image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5","accept-encoding":"gzip, deflate, br, zstd","accept-language":"fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3","connection":"keep-alive","dnt":"1","host":"localhost:3000","priority":"u=6","referer":"http://localhost:3000/","sec-fetch-dest":"image","sec-fetch-mode":"no-cors","sec-fetch-site":"same-origin","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:136.0) Gecko/20100101 Firefox/136.0"},"httpVersion":"1.1","method":"GET","originalUrl":"/favicon.ico","query":{},"url":"/favicon.ico"},"res":{"statusCode":404},"responseTime":0}}
+{"level":"info","message":"HTTP GET /status","meta":{"req":{"headers":{"accept":"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8","accept-encoding":"gzip, deflate, br, zstd","accept-language":"fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3","connection":"keep-alive","dnt":"1","host":"localhost:3000","priority":"u=0, i","sec-fetch-dest":"document","sec-fetch-mode":"navigate","sec-fetch-site":"none","sec-fetch-user":"?1","upgrade-insecure-requests":"1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:136.0) Gecko/20100101 Firefox/136.0"},"httpVersion":"1.1","method":"GET","originalUrl":"/status","query":{},"url":"/status"},"res":{"statusCode":200},"responseTime":0}}
+{"level":"warn","message":"HTTP GET /favicon.ico","meta":{"req":{"headers":{"accept":"image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5","accept-encoding":"gzip, deflate, br, zstd","accept-language":"fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3","connection":"keep-alive","dnt":"1","host":"localhost:3000","priority":"u=6","referer":"http://localhost:3000/status","sec-fetch-dest":"image","sec-fetch-mode":"no-cors","sec-fetch-site":"cross-site","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:136.0) Gecko/20100101 Firefox/136.0"},"httpVersion":"1.1","method":"GET","originalUrl":"/favicon.ico","query":{},"url":"/favicon.ico"},"res":{"statusCode":404},"responseTime":0}}
+{"level":"info","message":"HTTP GET /metrics","meta":{"req":{"headers":{"accept":"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8","accept-encoding":"gzip, deflate, br, zstd","accept-language":"fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3","connection":"keep-alive","dnt":"1","host":"localhost:3000","priority":"u=0, i","sec-fetch-dest":"document","sec-fetch-mode":"navigate","sec-fetch-site":"none","sec-fetch-user":"?1","upgrade-insecure-requests":"1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:136.0) Gecko/20100101 Firefox/136.0"},"httpVersion":"1.1","method":"GET","originalUrl":"/metrics","query":{},"url":"/metrics"},"res":{"statusCode":200},"responseTime":2}}
+{"error":{"code":"ECONNREFUSED"},"level":"error","message":"Failed to start server"}
+{"error":{},"level":"error","message":"Failed to start server"}
+{"error":{"code":"ENOTFOUND","errno":-3008,"hostname":"db","syscall":"getaddrinfo"},"level":"error","message":"Failed to start server"}
+{"level":"info","message":"✅ Server running on http://localhost:3000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:3000/docs"}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"warn","message":"❌ Database connection attempt 1/5 failed. Retrying in 5s..."}
+{"level":"info","message":"✅ Database connected successfully!"}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"info","message":"✅ Database connected successfully!"}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"info","message":"✅ Database connected successfully!"}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"info","message":"✅ Database connected successfully!"}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"info","message":"✅ Database connected successfully!"}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"info","message":"✅ Database connected successfully!"}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"info","message":"✅ Database connected successfully!"}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"info","message":"✅ Database connected successfully!"}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"info","message":"✅ Database connected successfully!"}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"info","message":"✅ Database connected successfully!"}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"info","message":"✅ Database connected successfully!"}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"info","message":"✅ Database connected successfully!"}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"info","message":"✅ Database connected successfully!"}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"info","message":"✅ Database connected successfully!"}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"info","message":"✅ Database connected successfully!"}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"info","message":"✅ Database connected successfully!"}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"info","message":"✅ Database connected successfully!"}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"info","message":"✅ Database connected successfully!"}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"warn","message":"❌ Database connection attempt 1/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 2/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 3/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 4/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 5/5 failed. Retrying in 5s..."}
+{"level":"error","message":"❌ Failed to connect to database after 5 attempts."}
+{"level":"error","message":"The API will start anyway, but DB-dependent routes will return errors until the database is available."}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"warn","message":"❌ Database connection attempt 1/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 2/5 failed. Retrying in 5s..."}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"warn","message":"❌ Database connection attempt 1/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 2/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 3/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 4/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 5/5 failed. Retrying in 5s..."}
+{"level":"error","message":"❌ Failed to connect to database after 5 attempts."}
+{"level":"error","message":"The API will start anyway, but DB-dependent routes will return errors until the database is available."}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"info","message":"✅ Database connected successfully!"}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"warn","message":"❌ Database connection attempt 1/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 2/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 3/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 4/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 5/5 failed. Retrying in 5s..."}
+{"level":"error","message":"❌ Failed to connect to database after 5 attempts."}
+{"level":"error","message":"The API will start anyway, but DB-dependent routes will return errors until the database is available."}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"warn","message":"❌ Database connection attempt 1/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 2/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 3/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 4/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 5/5 failed. Retrying in 5s..."}
+{"level":"error","message":"❌ Failed to connect to database after 5 attempts."}
+{"level":"error","message":"The API will start anyway, but DB-dependent routes will return errors until the database is available."}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"warn","message":"❌ Database connection attempt 1/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 2/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 3/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 4/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 5/5 failed. Retrying in 5s..."}
+{"level":"error","message":"❌ Failed to connect to database after 5 attempts."}
+{"level":"error","message":"The API will start anyway, but DB-dependent routes will return errors until the database is available."}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"warn","message":"❌ Database connection attempt 1/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 2/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 3/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 4/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 5/5 failed. Retrying in 5s..."}
+{"level":"error","message":"❌ Failed to connect to database after 5 attempts."}
+{"level":"error","message":"The API will start anyway, but DB-dependent routes will return errors until the database is available."}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"warn","message":"❌ Database connection attempt 1/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 2/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 3/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 4/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 5/5 failed. Retrying in 5s..."}
+{"level":"error","message":"❌ Failed to connect to database after 5 attempts."}
+{"level":"error","message":"The API will start anyway, but DB-dependent routes will return errors until the database is available."}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"warn","message":"❌ Database connection attempt 1/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 2/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 3/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 4/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 5/5 failed. Retrying in 5s..."}
+{"level":"error","message":"❌ Failed to connect to database after 5 attempts."}
+{"level":"error","message":"The API will start anyway, but DB-dependent routes will return errors until the database is available."}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"warn","message":"❌ Database connection attempt 1/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 2/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 3/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 4/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 5/5 failed. Retrying in 5s..."}
+{"level":"error","message":"❌ Failed to connect to database after 5 attempts."}
+{"level":"error","message":"The API will start anyway, but DB-dependent routes will return errors until the database is available."}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"warn","message":"❌ Database connection attempt 1/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 2/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 3/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 4/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 5/5 failed. Retrying in 5s..."}
+{"level":"error","message":"❌ Failed to connect to database after 5 attempts."}
+{"level":"error","message":"The API will start anyway, but DB-dependent routes will return errors until the database is available."}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"warn","message":"❌ Database connection attempt 1/5 failed. Retrying in 5s..."}
+{"level":"info","message":"✅ Server running on http://localhost:4000"}
+{"level":"info","message":"📄 Swagger Docs: http://localhost:4000/docs"}
+{"level":"info","message":"ℹ️ Check DB status: http://localhost:4000/info"}
+{"level":"warn","message":"❌ Database connection attempt 1/5 failed. Retrying in 5s..."}
+{"level":"warn","message":"❌ Database connection attempt 2/5 failed. Retrying in 5s..."}
