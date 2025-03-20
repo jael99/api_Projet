@@ -6,10 +6,17 @@ if (!DATABASE_URL) {
 }
 
 const pool = mysql.createPool({
-  uri: DATABASE_URL,
+  host: "my_mysql",  // Nom du service Docker
+  user: process.env.MYSQL_USER || "myuser",
+  password: process.env.MYSQL_PASSWORD || "mypassword",
+  database: process.env.MYSQL_DATABASE || "sakila",
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
+  // uri: DATABASE_URL,
+  // waitForConnections: true,
+  // connectionLimit: 10,
+  // queueLimit: 0,
   enableKeepAlive: true,
   keepAliveInitialDelay: 0
 });

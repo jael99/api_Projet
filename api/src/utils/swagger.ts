@@ -2,6 +2,8 @@ import swaggerJsdoc from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
 import { Express } from "express";
 
+
+
 const options = {
   definition: {
     openapi: "3.0.0",
@@ -34,6 +36,7 @@ const options = {
     },
   },
   apis: ["./src/router/*.ts"],
+  //apis: [path.join(__dirname, "../router/*.ts")], // Chemin absolu
 };
 
 
